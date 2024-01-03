@@ -27,8 +27,12 @@
             // var error = document.getElementById('error-msg');
             function generateQR()
             {    
-                  qrimage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrtext.value;
-                  imgBox.classList.add("show-img");   
+                  if(qrtext>0)
+                  {
+                      qrimage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrtext.value;
+                      imgBox.classList.add("show-img");   
+                  }
+                  
             }
             
         </script>
