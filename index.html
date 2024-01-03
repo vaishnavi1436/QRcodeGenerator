@@ -9,7 +9,7 @@
         <div class="container">
             <p>Enter Text or URL</p>
             <input type="text" placeholder="Text or URL" id="qrtext">
-<!--             <p id="error-msg">Blank QR is not allowed</p> -->
+            <p id="error-msg">Blank QR is not allowed</p>
             <div id="imgBox">
                 
                 <img src="" id="qrimage">
@@ -24,7 +24,7 @@
             let imgBox = document.getElementById('imgBox');
             let qrimage = document.getElementById('qrimage');
             let qrtext = document.getElementById('qrtext');
-            // var error = document.getElementById('error-msg');
+            var error = document.getElementById('error-msg');
             function generateQR()
             {    
                   if(qrtext>0)
@@ -32,7 +32,10 @@
                       qrimage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrtext.value;
                       imgBox.classList.add("show-img");   
                   }
-                  
+                  else
+                  {
+                      error.style.display = "block";
+                  }
             }
             
         </script>
